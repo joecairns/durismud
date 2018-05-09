@@ -1,0 +1,2 @@
+#action {You cannot go that way.}  {#map undo}
+#map set roomname

@@ -1,0 +1,73 @@
+#nop ****** Comms ******;
+#var public_chat_log chat.log
+#var private_chat_log chat.log
+#var info_log info.log
+
+#action {^You tell %1 in %3 '%2'$} {
+  #var recipient %1;
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <090>-\> %1 <090>: <170>%2<100>};
+}
+
+#action {^%1 tells you '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <090>%1 <100>: <170>%2<090>};
+}
+
+#action {^%1 tells you in %3 '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <090>%1 <100>: <170>%2<090>};
+}
+
+#action {^%1 tell your guild '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <acf>-\> <060>: %2<100>};
+}
+
+#action {^%1 tells your guild '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <acf>%1<060>: %2<100>};
+}
+
+#action {^%1 group-say '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>-\> <090>: <030>%2<090>};
+}
+
+#action {^%1 group-says in %3 '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>%1<090>: <030>%2<090>};
+}
+
+#action {^%1 group-says '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>%1<090>: <030>%2<090>};
+}
+
+#action {^You tell your racewar '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $public_chat_log {<100>$current_time <caf>-\>   <170>%2<100>};
+}
+
+#action {^%1 tells your racewar: '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $public_chat_log {<100>$current_time <170>%1<caf>: <130>%2<100>};
+}
+
+#action {^%*You have learned something new about %0!} {
+  #var current_time {@gettime{}};
+  #line log $info_log {<100>$current_time <020>LEARNED<090> <120>: <070>%0<090>};
+  #math currlrn {$currlrn + 1}
+}
+
+#action {^You say %* '%1'$} {
+  #var current_time {@get_time{}};
+  #line log $public_chat_log {<100>$current_time <179>-\>: <299>%1<099>};
+}
+
+#action {^%1 says %* '%3'$} {
+  #var current_time {@get_time{}};
+  #line log $public_chat_log {<100>$current_time <179>%1: <299>%3<099>};
+}
+
+#nop ****** End Comms ******;

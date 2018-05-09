@@ -1,0 +1,67 @@
+#alias {connect} {#session duris mud.durismud.com 7777}
+#script {password} {echo $DURIS_PASSWORD}
+
+#split {0} {0}
+#config {command echo} {on}
+#config {mccp} {on}
+#config {speedwalk} {on}
+
+#echo on
+
+#read comms.tin
+#read group_display.tin
+#read actions.tin
+
+#variable {bag} {bag}
+
+#function {get_time} {
+  #format {time} {%t} {%r};
+  #format {formatted_time} {%t} {$time};
+  #var result {$formatted_time};
+}
+
+#function {spellup} {
+  #regex {%0} {%+} {#var spellup %0;} {#var spellup me;};
+  #regex {$spellup} {^%d$} {#var spellup %1.$pet};
+  #return $spellup;
+}
+
+#alias {nchat} {ncha |Meepo| %0}
+#alias {gcc} {gc |Meepo| %0}
+
+#alias {m} {rest;mem;med}
+#alias {co} {put all.coins $bag}
+#alias {ba} {get coins $bag;dep all}
+#alias {gd} {get %1 $bag;drop %1}
+#alias {gs} {get %1 $bag; stat %1}
+
+#alias {cMeepo} {
+  #read necromancer.tin;
+  connect;
+  meepo;
+  #send $password[1];
+}
+
+#alias {cFleev} {
+  #read shaman.tin;
+  connect;
+  fleev;
+  #send $password[1];
+}
+
+#alias {cFleez} {
+  #read rogue.tin;
+  connect;
+  fleez;
+  $DURIS_PASSWORD;
+  #send $password[1];
+}
+
+#alias {cGrodak} {
+  connect;
+  grodak;
+  #send $password[1];
+}
+
+
+

@@ -1,0 +1,54 @@
+#variable {pet} {dracolich}
+
+#alias {f} {feign death}
+
+#alias {of} {order followers %0}
+#alias {ofb} {of backstab %0}
+#alias {ofc} {of circle}
+
+#alias {daggerpet} {cast 'minor creation' dagger;get dagger; give dagger %0; order %0 wield dagger}
+#alias {shp} {order %1.wraith cast 'minor creation' shield;order %1.wraith get shield;order %1.wraith wear shield}
+#alias {k} {ofb %1;ofc;assist spectre}
+
+#alias {sd} {cast 'slashing darkness' %1}
+#alias {ct} {cast 'chill touch' %1}
+#alias {ll} {cast 'life leech' %1}
+#alias {cc} {cast 'cone of cold' %1}
+#alias {ncb} {cast 'negative concussion blast' %1}
+#alias {ed} {cast 'energy drain' %1}
+
+#alias {fs} {cast 'fireshield'}
+#alias {di} {cast 'detect invisibility' @spellup{%1}}
+#alias {dm} {cast 'detect magic' @spellup{%1}}
+#alias {lev} {cast 'levitate' @spellup{%1}}
+#alias {fly} {cast 'fly' @spellup{%1}}
+#alias {invis} {cast 'improved invisibility' @spellup{%1}}
+
+#alias {ii} {group;order lich cast 'improved invisibility' @spellup{%1}}
+#alias {mg} {group;order lich cast 'minor globe of invulnerability' @spellup{%1}}
+#alias {hh} {group;order lich cast 'haste' @spellup{%1}}
+#alias {hhu} {group;hh Meepo;of cast 'haste' me}
+#alias {agi} {group;order wraith cast 'agility' Meepo}
+#alias {str} {group;order wraith cast 'strength' Meepo}
+
+#alias {bb} {group;of cast 'bigbys clenched fist' %1}
+#alias {bc} {group;of cast 'bigbys crushing hand' %1}
+#alias {fb} {group;of cast 'fireball' %1}
+#alias {ss} {group;of cast 'shadow shield' %1}
+#alias {sl} {group;of cast 'slow' %1}
+#alias {ff} {group;of cast 'fireshield'}
+#alias {mi} {group;ord lich cast 'mass invisibility'}
+
+#alias {em} {group;cast 'embalm' %1}
+#alias {ad} {cast 'animate dead' %1}
+#alias {rs} {cast 'raise spectre' %1}
+#alias {rw} {cast 'raise wraith' %1}
+#alias {rl} {cast 'raise lich' %1;#var pet lich;group all}
+
+#alias {hu} {cast 'heal undead' @spellup{%1}}
+#alias {pu} {cast 'protect undead' @spellup{%1}}
+#alias {pl} {cast 'protection from living' @spellup{%1}}
+#alias {vu} {cast 'vitalize undead' @spellup{%1}}
+
+#alias {puu} {pu 1; pu 2;pu 3;pu 4}
+#alias {plu} {cast 'protection from living' me;pl 1; pl 2;pl 3}

@@ -1,0 +1,23 @@
+#nop ****** Psionicist spells ******;
+#alias {ac} {will 'adrenaline control' %1}
+#alias {ego} {will 'ego whip' %1}
+#alias {excog} {will 'excogitate' %1}
+
+
+#alias {ba} {will 'ballistic attack' %1}
+#alias {eagi} {will 'enhance agility' %1}
+#alias {econ} {will 'enhance constitution' %1}
+#alias {edex} {will 'enhance dexterity' %1}
+#alias {estr} {will 'enhance strength' %1}
+
+#alias {ma} {will 'molecular agitation' %1}
+#alias {lh} {will 'lend health' %1}
+#alias {as} {will 'aura sight' %1}
+
+#alias {eb} {will 'ego blast' %1}
+#alias {ec} {will 'energy containment' %1}
+#alias {fa} {will 'flesh armor' %1}
+
+#alias {buff} {eagi;bstat;as;ac;fa}
+#alias {bstat} {econ;edex;estr}
+#nop ****** End Psionicist spells ******;

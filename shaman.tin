@@ -1,0 +1,15 @@
+#alias {mm} {cast 'mend' @spellup{%1} }
+#alias {gm} {cast 'greater mend' @spellup{%1}}
+
+#alias {ms} {cast 'molten spray' %1}
+#alias {gsd} {cast 'greater soul disturbance' %1}
+#alias {ari} {cast 'arieks shattering iceball' %1}
+
+#alias {raven} {cast 'ravenflight' @spellup{%1}}
+#alias {gsw} {cast 'greater spirit ward' @spellup{%1}}
+#alias {ps} {cast 'pantherspeed' @spellup{%1}}
+#alias {hv} {cast 'hawkvision' @spellup{%1}}
+#alias {ss} {cast 'sense spirit' @spellup{%1}}
+#alias {cw} {cast 'cold ward' @spellup{%1}}
+#alias {fw} {cast 'fire ward' @spellup{%1}}
+#alias {sa} {cast 'spirit armor' @spellup{%1}}

@@ -1,0 +1,40 @@
+#action {^You swing at your foe _really_ badly, sending your %0 flying!$} {get %0;wield %0};
+#action {^You are knocked to the ground by} {stand};
+#action {^Your studies are complete.$} {group;stand};
+#action {^You snap out of your meditative trance, memorization complete.$} {group;stand};
+#action {^%0 is now a member of your group.$} {group};
+#action {^%0 is dead! R.I.P.$} {group};
+
+
+
+/* looting and stuff */
+#action {^You receive your share of experience.$} {
+  #if {$do_loot==1} {get all corpse};
+  exp;
+};
+
+#action {^You get %1 coins from the corpse of %2$} {co};
+
+#action {^Obvious exits:} {
+  #if { $do_scan==1 } { scan };
+};
+
+
+#nop Informational Actions ;
+#action {^You feel your skill in %0 improving.} {
+  #var current_time {@get_time{}};
+  #line log $info_log {<100>$current_time <169>LEARNED<099> : <179>%0<099>};
+  #math currlrn {$currlrn + 1};
+};
+
+#action {^You raise a level!} {
+  #var current_time {@get_time{}};
+  #line log $info_log {<100>$current_time <169>LEVEL<090> : <179>$mychar<090>};
+  #math currlrn {$currlrn + 1};
+};
+
+#action {Experience till level: %1} {
+  #var current_time {@get_time{}};
+  #line log info.log {<100>$current_time <149>Experience<099> : <179>%1<099>};
+};
+#nop *******************************************;

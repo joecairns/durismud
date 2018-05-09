@@ -1,0 +1,31 @@
+#nop group_display;
+#function {get_name} {
+  #var name %0;
+  #regex {$name} {the zombie } {#var name zombie};
+  #regex {$name} {the skeleton } {#var name skeleton};
+  #regex {$name} {the lich } {#var name lich};
+  #return @padded_name{$name};
+};
+
+#function {padded_name} {
+  #var name %0;
+  #format {result} {%-10s} {$name};
+  #return $result;
+}
+
+#gag {^Your group consists of ( %1/20):$} {};
+#gag {^( Head)%* %1/%2 %* hit, %* %3/%4 %* move %5$} {};
+#gag {^(Front)%* %1/%2 %* hit, %* %3/%4 %* move %5$} {};
+
+#action {^Your group consists of ( %1/20):$} {
+  #system {truncate -s 0 group.log};
+  #line log group.log {Your group consists of ( %1/20):};
+} {0};
+
+#action {^( Head)%1 %2/%3 %4 hit, %5 %6/%7 %8 move %9$} {#line log group.log {<169>@get_name{%9}<099>:<179>%2/%3<099>};};
+#action {^(Front)%1 %2/%3 %4 hit, %5 %6/%7 %8 move %9$} {#line log group.log {<169>@get_name{%9}<099>:<179>%2/%3<099>};};
+
+#action {^( Head)%s %2$} {#line log group.log {<169>@get_name{%2}<099> : <179>Out of the room<099>};};
+#action {^(Front)%s %2$} {#line log group.log {<169>@get_name{%2}<099> : <179>Out of the room<099>};};
+
+#action {^But you are a member of no group?!$} {#system {truncate -s 0 group.log};#line log group.log {SO VERY LONELY!};};
