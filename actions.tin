@@ -29,7 +29,7 @@
 
 #action {^You raise a level!} {
   #var current_time {@get_time{}};
-  #line log $info_log {<100>$current_time <169>LEVEL<090> : <179>$mychar<090>};
+  #line log $info_log {<100>$current_time <169>LEVEL<090> : <179>$character_name<090>};
   #math currlrn {$currlrn + 1};
 };
 

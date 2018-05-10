@@ -36,6 +36,7 @@
 #alias {gs} {get %1 $bag; stat %1}
 
 #alias {cMeepo} {
+  #var character_name Meepo;
   #read necromancer.tin;
   connect;
   meepo;
@@ -43,6 +44,7 @@
 }
 
 #alias {cFleev} {
+  #var character_name Fleev;
   #read shaman.tin;
   connect;
   fleev;
@@ -50,6 +52,7 @@
 }
 
 #alias {cFleez} {
+  #var character_name Fleez;
   #read rogue.tin;
   connect;
   fleez;
@@ -58,6 +61,7 @@
 }
 
 #alias {cGrodak} {
+  #var character_name Grodak;
   connect;
   grodak;
   #send $password[1];
