@@ -11,7 +11,7 @@ Plans are to add (in no particular order):
 * Continue Spam reduction
 * Basic mapping
 
-![Main Screen](screenshot.png)
+![Main Screen](/screenshot.png)
 
 I use iTerm on the mac, and have setup a multipane display that opens, and runs all appropriate commands.  See [this guide] https://blog.andrewray.me/how-to-create-custom-iterm2-window-arrangments/ for setting up iTerm to your tastes.
 
